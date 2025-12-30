@@ -15,6 +15,7 @@ public abstract class ContentItem {
     public void setTitle(String title){
         if (!(title == null || title.isBlank()))
             this.title = title;
+        else throw new IllegalArgumentException();
     }
     public String getTitle(){
         return title;
@@ -23,6 +24,7 @@ public abstract class ContentItem {
     public void setYear(int year){
         if (year>=1990 && year<=2025)
             this.year = year;
+        else throw new IllegalArgumentException();
     }
     public int getYear(){
         return year;
@@ -31,6 +33,7 @@ public abstract class ContentItem {
     public void setDurationMinutes(int durationMinutes){
         if (durationMinutes>0)
             this.durationMinutes = durationMinutes;
+        else throw new IllegalArgumentException();
     }
     public int getDurationMinutes(){
         return durationMinutes;
